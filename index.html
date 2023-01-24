@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"> 
+   </head> 
+
+<body>
+
+    <div class="container" id="grid"> 
+    </div> 
+
+    <button type="button" id="rainbow">Rainbow</button>
+    <button type="button" id="erase">Erase</button>
+
+</body>
+<script src ="script.js"></script>
+</html>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(16, 25px [col-start]);
+}
+
+</style>
