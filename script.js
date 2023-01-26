@@ -41,13 +41,14 @@ function fillGrid(pixelSize) {
         color = 'rainbow';
   })
 
-  function resizeGrid(input){
-        
-    }
-
     resize.addEventListener('click', () => {
-        const input = prompt('How many squares per side? (Maxiumum 100');
-        console.log(input);
+        let pixelSize = prompt('How many squares per side? (Maxiumum 100)');
+
+        container.innerHTML = "";
+
+        fillGrid(pixelSize);
+        container.style.gridTemplateRows = `repeat(${pixelSize}, 1fr)`;
+        container.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
     })
 
 
