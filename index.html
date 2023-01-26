@@ -8,10 +8,11 @@
 
 <h1 class="header">Etch-A-Sketch</h1>
 
-    <div class="container" id="grid"> 
+    <div class="container"> 
     </div> 
 
     <div class="buttons">
+    <button class="button" type="button" id="resize">Resize</button>   
     <button class="button" type="button" id="rainbow">Rainbow</button>
     <button class="button" type="button" id="erase">Erase</button>
     </div>
@@ -22,7 +23,12 @@
 
 <style>
 
-* {
+html {
+    display: flex;
+    justify-content: center;
+}
+
+* {  
   box-sizing: border-box;
 }
 
@@ -32,10 +38,13 @@
 
 .container {
   display: grid;
-  justify-content: center;
-  align-content: center;
-  grid-template-columns: repeat(16, 25px [col-start]);
+  height: 400px;
+  width: 400px;
+  border: 1px solid black;
+}
 
+.square {
+    border: 1px solid black;
 }
 
 .buttons {
