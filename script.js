@@ -44,13 +44,13 @@ function fillGrid(pixelSize) {
     resize.addEventListener('click', () => {
         let pixelSize = prompt('How many squares per side? (Maxiumum 100)');
 
-        container.innerHTML = "";
-
-        fillGrid(pixelSize);
-        container.style.gridTemplateRows = `repeat(${pixelSize}, 1fr)`;
-        container.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
+        if (pixelSize < 1 || pixelSize > 100) {
+            alert('Please enter a value between 1 and 100.');
+        }
+        else {
+            container.innerHTML = "";
+            fillGrid(pixelSize);
+            container.style.gridTemplateRows = `repeat(${pixelSize}, 1fr)`;
+            container.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
+        }
     })
-
-
-  
-
