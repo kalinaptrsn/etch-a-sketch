@@ -4,6 +4,7 @@ const container = document.querySelector('.container');
 const rainbow = document.querySelector('#rainbow');
 const erase = document.querySelector('#erase');
 const resize = document.querySelector('#resize');
+const clear = document.querySelector('#clear');
 let color = 'black';
 
 fillGrid(defaultPixelSize);
@@ -39,9 +40,9 @@ function fillGrid(pixelSize) {
 
   rainbow.addEventListener('click', () => {
         color = 'rainbow';
-  })
+  });
 
-    resize.addEventListener('click', () => {
+  resize.addEventListener('click', () => {
         let pixelSize = prompt('How many squares per side? (Maxiumum 100)');
 
         if (pixelSize < 1 || pixelSize > 100) {
@@ -53,4 +54,12 @@ function fillGrid(pixelSize) {
             container.style.gridTemplateRows = `repeat(${pixelSize}, 1fr)`;
             container.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
         }
-    })
+    });
+
+  clear.addEventListener('click', clearGrid);
+        
+function clearGrid () {
+    for(let i = 0; i < container.children.length; i++){
+        container.children[i].style.backgroundColor = "white";
+    }
+};
